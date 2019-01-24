@@ -13,4 +13,4 @@ class IntegerArithmeticTestCase(unittest.TestCase):
         self.assertEqual((5 * 8), 40)
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(verbosity=2)
