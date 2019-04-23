@@ -25,10 +25,10 @@ sqlresult = xlwt.Workbook()
 sheet = sqlresult.add_sheet('id')
 for r in range(10):
     if r <= 5:
-        sheet.write(r,r,row[r])
+        sheet.write(0,r,row[r])
     else:
         print('wancheng')
 
 
-sqlresult.save('id1.xls')
+sqlresult.save('id2.xls')
 
