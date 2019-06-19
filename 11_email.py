@@ -1,25 +1,31 @@
-
-#使用本地sendmail服务
-
-
-import smtplib
+import  smtplib
 from email.mime.text import MIMEText
-from email.header import Header
+from email.utils import formataddr
+my_sender = '2741500014@qq.com'
+my_pass = 'imnyzqmffohwdeag'
+my_user = '3313505900@qq.com'
 
-sender = 'from@wuchenqian.com'
-receivers = ['1163645478@qq.com','2741500014@qq.com']
+def mail():
+    ret =True
+    try:
+        msg = MIMEText('填写邮件问题','plain','utf-8')
+        msg['From']=formataddr(["发件人名称",my_sender])
+        msg['To'] = formataddr(["收件人测试",my_user])
+        msg['Subject'] = "邮件主题-测试"
 
-message = MIMEText('Python 邮件发送测试...', 'plain', 'utf-8')
-message['From'] = Header("菜鸟教程", 'utf-8')     # 发送者
-message['To'] =  Header("测试", 'utf-8')          # 接收者
+        server =smtplib.SMTP_SSL("smtp.qq.com",465)
+        server.login(my_sender,my_pass)
+        server.sendmail(my_sender,[my_user,],msg.as_string())
+        server.quit()
+    except Exception:
+        ret =False
+    return ret
 
 
-subject = 'Python SMTP 邮件测试'
-message['Subject'] = Header(subject, 'utf-8')
+ret = mail()
+if ret:
+    print("chenggong")
+else:
+    print("shibai")
 
-try:
-    smtpObj = smtplib.SMTP('localhost')
-    smtpObj.sendmail(sender, receivers, message.as_string())
-    print ("邮件发送成功")
-except smtplib.SMTPException:
-    print ("Error: 无法发送邮件")
+
