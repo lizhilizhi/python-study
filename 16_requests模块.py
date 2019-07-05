@@ -1,6 +1,9 @@
-import requests
 
-t = requests.get('http://rc-saas-admin-dev.tianli.shop/rc/v1/admin/applicants')
-print (t)
+
+from Crypto.Hash import SHA
+
+data = '{"version": 2.1,"id_no": "43052819890106335X","name": "111","phone": "17858804735"}'
+
+
 
 
