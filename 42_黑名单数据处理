@@ -1,0 +1,16 @@
+# coding:utf-8
+import re 
+import json,requests
+import sqlite3
+
+f = open('/Users/apple/Desktop/a.txt').read()
+ret = re.findall(r'1[3567]\d{9}',f)
+
+def getphone():
+    f = open(/Users/apple/Desktop/a.txt').read()
+    ret = re.findall(r'1[3567]\d{9}',f)
+    return ret
+
+a =getphone()
+
+print(a)
