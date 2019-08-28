@@ -22,5 +22,17 @@ class Fibonacci(object):
             raise StopIteration
 fibo = Fibonacci(10)
 
-for num in fibo:
-    print(num)
+
+
+
+
+class  fab2(max):
+    n,a,b = 0,0,1
+    while n < max:
+        yield b
+        a,b = b,a+b
+        n = n+1
+        
+
+
+
